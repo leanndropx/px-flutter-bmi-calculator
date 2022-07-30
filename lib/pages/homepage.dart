@@ -11,15 +11,12 @@ class _HomepageState extends State<Homepage> {
 
   TextEditingController weightController = TextEditingController();
   TextEditingController heightController = TextEditingController();
-  GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
   String result = 'Enter your weight and height into the fields to calculate BMI';
   late double bmi;
   late double weight;
   late double height;
-  String weightError = '';
-  String heightError = '';
-
   double weightToPlus = 0;
   double weightToLose = 0;
 
@@ -27,19 +24,19 @@ class _HomepageState extends State<Homepage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('BMI Calculator'),
+        title: const Text('BMI Calculator'),
         centerTitle: true,
         backgroundColor: Colors.green,
         actions: [
           IconButton(
             onPressed: resetController,
-            icon: Icon(Icons.refresh),
+            icon: const Icon(Icons.refresh),
           )
         ],
       ),
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
-        padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
+        padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
         child: Form(
           key: _formKey,
           child: Column(
