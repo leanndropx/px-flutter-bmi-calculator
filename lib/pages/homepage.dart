@@ -11,7 +11,7 @@ class _HomepageState extends State<Homepage> {
 
   TextEditingController weightController = TextEditingController();
   TextEditingController heightController = TextEditingController();
-  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
   String result = 'Enter your weight and height into the fields to calculate BMI';
   late double bmi;
@@ -115,6 +115,7 @@ class _HomepageState extends State<Homepage> {
     heightController.text = "";
     setState(() {
       result = 'Enter your weight and height into the fields to calculate BMI';
+      _formKey = GlobalKey<FormState>();
     });
   }
 
